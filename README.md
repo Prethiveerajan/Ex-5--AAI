@@ -14,7 +14,7 @@ Step 5: Store the estimated state in a list.<BR>
 Step 6: Plot the true and estimated positions.<BR>
 <H3>Program:</H3>
 
-```
+```python
   import numpy as np
 class KalmanFilter:
   def __init__ (self,F,H,Q,R,x0,P0):
@@ -36,8 +36,7 @@ class KalmanFilter:
     S = np.dot(np.dot(self.H, self.P),self.H.T) + self.R
     K = np.dot(np.dot(self.P, self.H.T), np.linalg.inv(S))
     self.x = self.x + np.dot(K, y)
-`````
-````
+
 # Example usage:
 # Assume we want to track the position and velocity of a moving object
 # with a state vector of [position, velocity] and a single scalar measurement
@@ -49,10 +48,8 @@ Q = np.diag([0.1, 0.1]) # process noise covariance
 R = np.array([[1]]) # measurement noise covariance
 x0 = np.array([0, 0]) # initial state estimate
 P0 = np.diag([1, 1]) # initial error covariance
-````
 
 
-```
 kf = KalmanFilter(F,H,Q,R,x0,P0)
 
 true_states=[]
@@ -69,7 +66,6 @@ for z in measurements:
     est_states.append(kf.x)
 
     
-``
 
 # plot the true and estimated positions
 import matplotlib.pyplot as plt
@@ -78,7 +74,7 @@ plt.plot([s[0] for s in est_states], label='estimate')
 plt.legend()
 plt.show()
 
-
+```
 ## Output:
 ![output](1.png)
 

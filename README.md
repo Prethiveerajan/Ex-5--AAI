@@ -80,7 +80,7 @@ plt.show()
 ```
 
 <H3>Output:</H3>
-![1](https://github.com/Prethiveerajan/Ex-5--AAI/assets/94233064/a792547b-807b-48db-9519-2ecaf41c5067)
+![output](1.png)
 
 
 
